@@ -8,7 +8,35 @@
 </head>
 <body>
 
-<%= yield %>
+<!-- Content contains nav, section and aside parts -->
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- nav... not here by default -->
+
+    <!-- section -->
+    <div class="span10">
+      <%= render 'header' %>
+
+      <!-- flash -->
+      <% flash.each do |key, value| %>
+        <% if !value.nil? %>
+          <div class="alert alert-<%= key %>">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+            <!-- be careful with the row method! -->
+              <%= raw(value) %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <!-- all the views generated here -->
+      <%= yield %>
+
+    </div>
+
+  </div>
+</div>
+
+<%= render 'footer' %>
 
 </body>
 </html>

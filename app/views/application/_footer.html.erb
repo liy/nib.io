@@ -1,0 +1,11 @@
+<hr>
+<footer id="footer">
+  <p>&copy; Nib 2012</p>
+
+<!-- debug message -->
+<% if Rails.env.development? %>
+        <%= debug(params) %>
+<% end %>
+<span class="label label-info"><%= request.env['SERVER_SOFTWARE'] %></span> <span class="label label-info"><%= request.remote_ip %></span> <span class="label"><%= request.user_agent %></span>
+
+</footer>

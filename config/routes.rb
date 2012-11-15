@@ -1,4 +1,21 @@
 NibIo::Application.routes.draw do
+  get "home/index"
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
+  # home page of the current user
+  resources :users, :only => [:show] do
+    match 'readings' => 'books#readings', :as => :readings
+    match 'writings' => 'books#writings', :as => :writings
+  end
+
+  # by default it will be curent user
+  match 'readings' => 'books#readings'
+  match 'writings' => 'books#writings'
+
+  resources :books
+
+  root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

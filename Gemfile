@@ -22,6 +22,15 @@ end
 
 gem 'jquery-rails'
 
+gem 'devise'
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+# during the development, I'll display the update infor on the app front page
+gem 'simple-rss'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
