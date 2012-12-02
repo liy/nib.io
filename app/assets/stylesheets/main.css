@@ -1,0 +1,85 @@
+body{
+  margin: 0;
+
+  font-family: Georgia, "STHeiti", "Microsoft YaHei", "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #333;
+
+  height: 100%;
+  /*background-color: #CCC;*/
+}
+
+a{
+  text-decoration: none;
+  color: #A00000;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+h1{
+  margin: 0;
+  padding: 1em 0;
+}
+
+p{
+  margin: 0;
+  line-height: 1.9em;
+  margin-bottom: 1.6em;
+}
+
+::selection{
+  background: rgba(0, 0, 0, 0.1); /* Safari */
+}
+
+::-moz-selection{
+  background: rgba(0, 0, 0, 0.1); /* Firefox */
+}
+
+
+
+
+
+.container{
+}
+
+.paper{
+  width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+
+  /*border: 1pt solid rgba(221, 221, 221, 0.7);*/
+  background-color: #FCFCFC;
+
+  -moz-box-shadow: 0 0 15px rgba(204, 204, 204, 0.7);
+  -webkit-box-shadow: 0 0 15px rgba(204, 204, 204, 0.7);
+  box-shadow: 0 0 15px rgba(204, 204, 204, 0.7);
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.inserted {
+  width: 680px;
+
+  margin-top: 0;
+  margin-bottom: 1.6em;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 15px;
+
+  color: #525252;
+}
+
+.inserted p:last-child {
+  margin-bottom: 0;
+}
+
+.inserted h1 {
+  font-size: inherit;
+  padding-top: 0;
+  padding-bottom: 1em;
+}
