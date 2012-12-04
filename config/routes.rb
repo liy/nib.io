@@ -1,7 +1,14 @@
 NibIo::Application.routes.draw do
-  get "home/index"
+  resources :users
+  resources :sessions
+  resources :books
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  # :as => 'signin' ensures we have functions: path_to_signin, url_to_signin available
+  get '/signin', :to => 'sessions#new'
+  get '/signout', :to => 'sessions#destroy'
+  get '/signup', :to => 'users#new'
+
+  root :to => "home#index"
 
   # home page of the current user
   resources :users, :only => [:show] do
@@ -13,9 +20,7 @@ NibIo::Application.routes.draw do
   match 'readings' => 'books#readings'
   match 'writings' => 'books#writings'
 
-  resources :books
 
-  root to: 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

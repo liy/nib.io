@@ -4,12 +4,12 @@
 <hr>
 <div><% tracked = nil %>
 <% @rss.items.each do |item| %>
-        <% prettyPubDate = pretty_date(item.updated.to_time) %>
-        <% if tracked != prettyPubDate %>
-                <% tracked = prettyPubDate %>
-                <span class="label label-info"><%= prettyPubDate %></span>
-        <% end %>
+<% prettyPubDate = pretty_date(item.updated.to_time) %>
+<% if tracked != prettyPubDate %>
+<% tracked = prettyPubDate %>
+<span class="label label-info"><%= prettyPubDate %></span>
+<% end %>
 
-        <pre><%= raw item.title %></pre>
+<pre><%= raw item.title %></pre>
 <% end %>
 </div>
