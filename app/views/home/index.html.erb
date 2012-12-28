@@ -1,15 +1,14 @@
-<h1>Public home page</h1>
-
-<h2><%= t 'recent_update' %></h2>
-<hr>
-<div><% tracked = nil %>
-<% @rss.items.each do |item| %>
-<% prettyPubDate = pretty_date(item.updated.to_time) %>
-<% if tracked != prettyPubDate %>
-<% tracked = prettyPubDate %>
-<span class="label label-info"><%= prettyPubDate %></span>
-<% end %>
-
-<pre><%= raw item.title %></pre>
-<% end %>
+<div id="home-container">
+  <div class="home-top-section paper">
+    <div>tofu.io</div>
+  </div>
+  <div class="home-middle">
+    <ul class="home-menu">
+      <li><%= link_to "Try", "#" %></li>
+      <li><%= link_to "Sign In", signin_path %></li>
+      <li><%= link_to "Sign Up", signup_path %></li>
+    </ul>
+  </div>
+  <div class="home-bottom-section paper">
+  </div>
 </div>
