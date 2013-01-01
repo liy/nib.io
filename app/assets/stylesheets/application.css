@@ -11,6 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  margin: 0;
+
+  font-family: Georgia, "STHeiti", "Microsoft YaHei", "Times New Roman", Times, serif;
+  font-size: 20px;
+
+  background-color: #F9F9F9;
+  background-image:url('../bg.png');
+}
+
+a {
+  text-decoration: none;
+}
+
 .paper {
   border-left: 1pt solid #E6E6E6;
   border-right: 1pt solid #E6E6E6;
@@ -22,4 +37,10 @@
   -moz-box-shadow:    0 0 10px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-shadow:         0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-list {
+  width: 800px;
+  float: left;
+  margin: 10px;
 }
