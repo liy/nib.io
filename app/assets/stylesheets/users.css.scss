@@ -13,6 +13,9 @@
 
   float: left;
 
+  margin-right: 10px;
+  margin-top: 10px;
+
   .avatar {
     margin-left: 32px;
     right: 0;
@@ -39,8 +42,8 @@
 }
 
 .user-menu li {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .user-menu li:first-child {
@@ -49,6 +52,8 @@
 
 .user-menu li a {
   display: block;
+
+  color: #B5B5B5;
 
   padding-top: 5px;
   padding-bottom: 5px;
@@ -63,4 +68,79 @@
   color: #FFFFFF;
 
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+.user-info-container {
+  min-height: 800px;
+  float: left;
+
+  background-color: #FCFCFC;
+}
+
+.user-sidebar {
+  width: 120px;
+  float: left;
+
+  /*background-color: rgba(0, 0, 0, 0.05);*/
+  height: 800px;
+}
+
+.user-sidebar-menu {
+  font-size: 16px;
+  color: #999999;
+  text-decoration: none;
+  text-align: left;
+  float: left;
+
+  margin-top: 33px;
+
+  ul{
+    list-style-type: none;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  li a {
+    width: 100px;
+    display: block;
+
+    color: #999999;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 18px;
+  }
+
+  li a:visited {
+    color: #999999;
+  }
+
+  li a:hover {
+    color: #FFFFFF;
+    background-color: #B7B7B7;
+
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.user-books-nav {
+  width: 770px;
+
+  float: left;
+}
+
+.user-book {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border: 1pt solid #E6E6E6;
+  background-color: #FFF;
+
+  float: left;
 }

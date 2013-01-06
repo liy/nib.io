@@ -4,11 +4,12 @@
 <%= render 'head'%>
 </head>
 <body>
+<%= render 'header' %>
+
+<div class="test"></div>
 
 <!-- Content contains nav, section and aside parts -->
 <div class="container">
-  <%= render 'header' %>
-
   <!-- flash -->
   <% flash.each do |key, value| %>
     <% if !value.nil? %>
