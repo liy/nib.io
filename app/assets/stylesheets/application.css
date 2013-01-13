@@ -11,6 +11,12 @@
  *= require_self
  *= require_tree .
  */
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
 
 body {
   margin: 0;
