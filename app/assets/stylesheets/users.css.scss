@@ -1,7 +1,6 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .user-menu {
   width: 80px;
 
@@ -66,6 +65,7 @@
 
 .user-menu li a:hover {
   color: #FFFFFF;
+  background-color: #DDD;
 
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
@@ -94,7 +94,7 @@
 
   margin-top: 33px;
 
-  ul{
+  ul {
     list-style-type: none;
 
     padding: 0;
@@ -104,49 +104,73 @@
   li {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
 
-  li a {
-    width: 100px;
-    display: block;
+    a {
+      width: 100px;
+      display: block;
 
-    color: #999999;
+      color: #999999;
 
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 18px;
-  }
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 18px;
+    }
 
-  li a:visited {
-    color: #999999;
-  }
+    a:visited {
+      color: #999999;
+    }
 
-  li a:hover {
-    color: #FFFFFF;
-    background-color: #B7B7B7;
+    a:hover {
+      color: #FFFFFF;
+      background-color: #B7B7B7;
 
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+    }
   }
 }
 
-.user-books-nav {
+
+/* User books navigation related css */
+.books-nav {
   width: 770px;
 
   float: left;
 }
 
-.user-book {
+.book {
   position: relative;
 
   width: 298px;
   height: 349px;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
   border: 1pt solid #E6E6E6;
   /*border: 1pt solid #FF0000;*/
   background-color: #FFF;
 
   float: left;
+
+  a {
+    color: #D9D9D9;
+  }
+
+  a:hover {
+    color: #D11821;
+    background-color: transparent;
+  }
+
+  /*.book-tools {
+    visibility: hidden;
+  }*/
 }
+
+/*.book:hover {
+  .book-tools {
+    visibility: visible;
+  }
+}*/
 
 .book-top {
   position: relative;
@@ -182,11 +206,12 @@
   /*background-color: #FF9900;*/
 
   ul {
-     padding: 0;
-    li {
-      display: inline;
-      list-style-type: none;
-    }
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    list-style-type: none;
   }
 }
 
@@ -196,9 +221,10 @@
   margin-top: 20px;
   padding: 10px 20px;
 
-  font-family: "黑体", Georgia;
+  font-family: Georgia, "黑体", "STHeiti";
   font-size: 16px;
   font-weight: bold;
+  color: #000;
 
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -221,19 +247,10 @@
   float: left;
   margin-top: 13px;
   margin-left: 20px;
+}
 
-  li {
-    margin-right: 10px;
-  }
-
-  a {
-    color: #D9D9D9;
-  }
-
-  a:hover {
-    color: #D11821;
-    background-color: transparent;
-  }
+.book-tools li {
+  margin-right: 20px;
 }
 
 .book-author-category {

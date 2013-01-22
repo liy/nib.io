@@ -1,4 +1,4 @@
 <!-- signed in user's home -->
-<!-- <h1><%= @user.to_json %></h1> -->
-<%= render :partial => "user_menu" %>
-<%= render :partial => "books" %>
+<h1>home</h1>
+<%= render :partial => "main_menu" %>
+<%= render :partial => "books", :locals => { :type => :home } %>

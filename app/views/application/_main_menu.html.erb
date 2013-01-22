@@ -1,0 +1,9 @@
+<div class="user-menu">
+  <a href="<%= user_path(current_user) %>"><div class="avatar"><%= image_tag "1.jpg", {:width => 48, :height => 48} %></div></a>
+  <ul>
+    <li><%= link_to "读物", user_readings_path(current_user) %></li>
+    <li><%= link_to "写作", user_writings_path(current_user) %></li>
+    <li><%= link_to "关注", "#" %></li>
+    <li><%= link_to "粉丝", "#" %></li>
+  </ul>
+</div>

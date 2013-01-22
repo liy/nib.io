@@ -1,16 +1,2 @@
-<h1><%= @user.name %></h1>
-<h2><%= link_to 'Your reading list', user_readings_path(@user) %></h2>
-<ul>
-<% @user.readings.each do |r| %>
-  <li>r.title</li>
-<% end %>
-</ul>
-<%= link_to 'Subscribe book', '#' %>
-
-<h2><%= link_to 'Your writings', user_writings_path(@user) %></h2>
-<ul>
-<% @user.writings.each do |r| %>
-  <li><%= r.title %></li>
-<% end %>
-</ul>
-<%= link_to 'New book', new_book_path %>
+<%= render :partial => "main_menu" %>
+<%= render :partial => "books" %>

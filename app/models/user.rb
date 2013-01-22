@@ -14,4 +14,26 @@ class User < ActiveRecord::Base
 
   has_many :authorings
   has_many :writings, :through => :authorings, :source => :book, :class_name => "Book"
+
+  has_many :favourites
+
+  def liked?(book)
+
+  end
+
+  def like!(book)
+    favourites.create!(book_id: book.id)
+  end
+
+  def subscribe!(book)
+    subscriptions.create!(book_id: book_id)
+  end
+
+  def subscribed?(book)
+
+  end
+
+  def is_author?(book)
+
+  end
 end

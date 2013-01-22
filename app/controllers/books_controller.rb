@@ -1,25 +1,10 @@
 class BooksController < ApplicationController
+  layout 'reading', only: [:show]
+  layout 'writing', only: [:new, :edit]
+
   # browse all books
   def index
     @books = Book.all
-  end
-
-  def writings
-    @user = User.find_by_id(params[:user_id])
-    if @user
-      @books = @user.writings
-    else
-      @books = current_user.writings
-    end
-  end
-
-  def readings
-    @user = User.find_by_id(params[:user_id])
-    if @user
-      @books = @user.readings
-    else
-      @books = current_user.readings
-    end
   end
 
   def show
@@ -44,7 +29,13 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
 
+    if @book.update_attributes(params[:book])
+      redirect_to @book, notice: 'The book was sucessfully updated.'
+    else
+      render 'edit', notice: @book.errors.full_messages
+    end
   end
 
   def destroy

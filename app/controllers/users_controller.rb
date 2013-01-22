@@ -14,12 +14,39 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # TODO: get all the books
+    @books = @user.readings
 
     if current_user.id == @user.id
       render :home
     else
       render :show
     end
-    # render text: @user.writings[0].to_yaml
+  end
+
+  def writings
+    @user = User.find_by_id(params[:user_id])
+    if @user
+      @books = @user.writings
+    else
+      @books = current_user.writings
+    end
+  end
+
+  def readings
+    @user = User.find_by_id(params[:user_id])
+    if @user
+      @books = @user.readings
+    else
+      @books = current_user.readings
+    end
+  end
+
+  def like
+
+  end
+
+  def subscribe
+
   end
 end

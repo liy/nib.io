@@ -1,0 +1,21 @@
+<div class="book">
+  <a href="<%= book_path(book) %>">
+    <div class="book-top">
+      <%# image_tag "cover.gif", {:class => "book-cover"} %>
+      <span class="book-title"><%= book.title %></span>
+    </div>
+    <div class="book-middle"><p class="book-summery">book.title</p></div>
+  </a>
+  <div class="book-bottom">
+    <ul class="book-tools">
+      <li><a href="#"><span class="entypo-book" style="font-size: 13px; margin-top:10px"></span></a></li>
+      <li><a href="#"><span class="entypo-heart"></span></a></li>
+    </ul>
+    <ul class="book-author-category">
+      <li><a href="#">李旸</a></li>
+      <li><a href="#">小说</a></li>
+    </ul>
+
+    <%= render 'like', book: book %>
+  </div>
+</div>

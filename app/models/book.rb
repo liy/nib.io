@@ -6,4 +6,8 @@ class Book < ActiveRecord::Base
 
   has_many :authorings
   has_many :authors, :through => :authorings, :source => :user, :class_name => "User"
+
+  has_many :users
+
+  validates :title, presence: true
 end

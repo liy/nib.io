@@ -2,23 +2,24 @@ NibIo::Application.routes.draw do
   resources :users
   resources :sessions
   resources :books
+  resources :favourites
+
+  root :to => "home#index"
 
   # :as => 'signin' ensures we have functions: path_to_signin, url_to_signin available
   get '/signin', :to => 'sessions#new'
   get '/signout', :to => 'sessions#destroy'
   get '/signup', :to => 'users#new'
 
-  root :to => "home#index"
-
   # home page of the current user
   resources :users, :only => [:show] do
-    match 'readings' => 'books#readings', :as => :readings
-    match 'writings' => 'books#writings', :as => :writings
+    match 'readings' => 'users#readings', :as => :readings
+    match 'writings' => 'users#writings', :as => :writings
   end
 
   # by default it will be curent user
-  match 'readings' => 'books#readings'
-  match 'writings' => 'books#writings'
+  match 'readings' => 'users#readings'
+  match 'writings' => 'users#writings'
 
 
   # The priority is based upon order of creation:
