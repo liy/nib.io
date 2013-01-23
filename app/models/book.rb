@@ -10,4 +10,6 @@ class Book < ActiveRecord::Base
   has_many :users
 
   validates :title, presence: true
+
+  has_many :favourites, :dependent => :destroy
 end
