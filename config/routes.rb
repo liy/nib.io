@@ -13,14 +13,25 @@ NibIo::Application.routes.draw do
   match '/readings' => 'users#readings'
   match '/writings' => 'users#writings'
 
-  # TODO: display interested books according to user's likes and reading
-  match '/users/:id' => 'books#index'
 
   # user resources, readings and writings
   resources :users do
-    match 'readings' => 'users#readings', :as => :readings
-    match 'writings' => 'users#writings', :as => :writings
+    member do
+      get :readings, :as => :readings
+      get :writings, :as => :writings
+    end
   end
+
+  # TODO: display interested books according to user's likes and reading
+  # match '/users/:id' => 'books#index'
+
+
+
+
+
+
+
+
 
 
   # The priority is based upon order of creation:
