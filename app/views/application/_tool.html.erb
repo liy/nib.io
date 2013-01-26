@@ -1,4 +1,0 @@
-<%= form_for(current_user.favourites.build(book_id: book.id)) do |f| %>
-  <div><%= f.hidden_field :book_id %></div>
-  <%= f.submit "Like", class: "btn btn-large btn-primary" %>
-<% end %>

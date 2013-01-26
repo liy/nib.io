@@ -1,0 +1,1 @@
+$('#unlike-<%= @book.id %>').replaceWith('<%= link_to favourites_path(book_id: @book.id), id: "like-#{@book.id}", method: :post, remote: true do %><span class="entypo-heart" style="font-size: 13px; margin-top:10px">like</span><% end %>')

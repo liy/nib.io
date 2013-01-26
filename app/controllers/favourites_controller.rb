@@ -5,7 +5,13 @@ class FavouritesController < ApplicationController
   end
 
   def create
-
+    # render text: params
+    @book = Book.find(params[:book_id])
+    current_user.like!(@book)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
@@ -14,5 +20,14 @@ class FavouritesController < ApplicationController
 
   def update
 
+  end
+
+  def destroy
+    @book = Favourite.find(params[:id]).book
+    current_user.unlike!(@book)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

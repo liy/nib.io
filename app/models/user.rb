@@ -18,11 +18,15 @@ class User < ActiveRecord::Base
   has_many :favourites, :dependent => :destroy
 
   def liked?(book)
-
+    favourites.find_by_book_id(book.id)
   end
 
   def like!(book)
     favourites.create!(book_id: book.id)
+  end
+
+  def unlike!(book)
+    favourites.find_by_book_id!(book.id).destroy
   end
 
   def subscribe!(book)

@@ -8,6 +8,7 @@ NibIo::Application.routes.draw do
 
   resources :sessions
   resources :books
+  resources :favourites
 
   # by default it will be curent user
   match '/readings' => 'users#readings'
