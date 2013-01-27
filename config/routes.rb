@@ -1,4 +1,22 @@
 NibIo::Application.routes.draw do
+  get "authorings/new"
+
+  get "authorings/create"
+
+  get "authorings/edit"
+
+  get "authorings/update"
+
+  get "authorings/destroy"
+
+  get "subscriptions/index"
+
+  get "subscriptions/show"
+
+  get "subscriptions/create"
+
+  get "subscriptions/destroy"
+
   root :to => "home#index"
 
   # :as => 'signin' ensures we have functions: path_to_signin, url_to_signin available
@@ -19,6 +37,7 @@ NibIo::Application.routes.draw do
   # user resources, readings and writings
   resources :users do
     member do
+      # only for retrieve the categoriesed books of the specific users
       get :likes, :as => :likes
       get :readings, :as => :readings
       get :writings, :as => :writings

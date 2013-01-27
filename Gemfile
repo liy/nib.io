@@ -43,3 +43,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # during the development, I'll display the update infor on the app front page
 gem 'simple-rss'
+
+# for debugging
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
