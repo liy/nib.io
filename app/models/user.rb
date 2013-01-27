@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   has_many :authorings
   has_many :writings, :through => :authorings, :source => :book, :class_name => "Book"
 
-  has_many :favourites, :dependent => :destroy
+  has_many :favourites
+  has_many :likes, :through => :favourites, :source => :book, :class_name => "Book"
 
   def liked?(book)
     favourites.find_by_book_id(book.id)

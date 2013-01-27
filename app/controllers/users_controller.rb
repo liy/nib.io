@@ -42,8 +42,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def like
-
+  def likes
+    @user = User.find_by_id(params[:user_id])
+    if @user
+      @books = @user.likes
+    else
+      @books = current_user.likes
+    end
   end
 
   def subscribe

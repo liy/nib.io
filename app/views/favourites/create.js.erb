@@ -1,1 +1,0 @@
-$('#like-<%= @book.id %>').replaceWith('<%= link_to current_user.favourites.find_by_book_id(@book.id), id: "unlike-#{@book.id}", method: :delete, remote: true do %><span class="entypo-heart red" style="font-size: 13px; margin-top:10px">like</span><% end %>')

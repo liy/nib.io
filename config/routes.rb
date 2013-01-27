@@ -8,20 +8,27 @@ NibIo::Application.routes.draw do
 
   resources :sessions
   resources :books
-  resources :favourites
+
 
   # by default it will be curent user
-  match '/readings' => 'users#readings'
-  match '/writings' => 'users#writings'
+  # get '/readings' => 'users#readings'
+  # get '/writings' => 'users#writings'
+  # get '/likes' => 'users#likes'
 
 
   # user resources, readings and writings
   resources :users do
     member do
+      get :likes, :as => :likes
       get :readings, :as => :readings
       get :writings, :as => :writings
     end
   end
+
+  resources :favourites
+  resources :authorings
+  resources :subscriptions
+
 
   # TODO: display interested books according to user's likes and reading
   # match '/users/:id' => 'books#index'

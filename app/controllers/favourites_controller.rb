@@ -1,7 +1,8 @@
 #coding: utf-8
 class FavouritesController < ApplicationController
-  def new
-
+  def index
+    # @user = User.find(params[:user_id])
+    render json: params
   end
 
   def create
@@ -10,24 +11,17 @@ class FavouritesController < ApplicationController
     current_user.like!(@book)
     respond_to do |format|
       format.html
-      format.js
+      format.js {  render 'toggle' }
     end
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
   def destroy
-    @book = Favourite.find(params[:id]).book
+    @fav = Favourite.find(params[:id])
+    @book = @fav.book
     current_user.unlike!(@book)
     respond_to do |format|
       format.html
-      format.js
+      format.js {  render 'toggle' }
     end
   end
 end

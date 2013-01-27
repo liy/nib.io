@@ -3,14 +3,6 @@
     <a href="#"><span class="entypo-book" style="font-size: 13px; margin-top:10px">read</span></a>
   </li>
   <li>
-    <% if current_user.liked?(book) %>
-      <%= link_to current_user.favourites.find_by_book_id(book.id), id: "unlike-#{book.id}", method: :delete, remote: true do %>
-        <span class="entypo-heart red" style="font-size: 13px; margin-top:10px">like</span>
-      <% end %>
-    <% else %>
-      <%= link_to favourites_path(book_id: book.id), id: "like-#{book.id}", method: :post, remote: true do %>
-        <span class="entypo-heart" style="font-size: 13px; margin-top:10px">like</span>
-      <% end %>
-    <% end %>
+    <%= render 'heart', book: book %>
   </li>
 </ul>
