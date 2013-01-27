@@ -1,0 +1,6 @@
+<h1>Fans</h1>
+<ul>
+  <% @book.fans.each do |fan| %>
+  <li><%= fan.email %></li>
+  <% end  %>
+</ul>

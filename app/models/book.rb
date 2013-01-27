@@ -10,9 +10,9 @@ class Book < ActiveRecord::Base
   has_many :favourites
   has_many :fans, :through => :favourites, :source => :user, :class_name => "User"
 
-  has_many :users
-
   validates :title, presence: true
 
-  has_many :favourites, :dependent => :destroy
+  def written_by?(user)
+    authorings.find_by_user_id(user.id)
+  end
 end

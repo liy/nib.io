@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   def subscribe!(book)
     subscriptions.create!(book_id: book.id)
   end
-  
+
   def unsubscribe!(book)
     subscriptions.find_by_book_id!(book.id).destroy
   end

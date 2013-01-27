@@ -50,3 +50,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
 end
+
+# for character based diff
+gem 'diff-lcs'
+
+# git support
+gem 'grit'

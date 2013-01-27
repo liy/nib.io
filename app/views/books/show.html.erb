@@ -1,6 +1,22 @@
 <h1>Book#show</h1>
 <p>Find me in app/views/book/show.html.erb</p>
 
-<%= @book.title %>
-<%= link_to 'Edit', edit_book_path(@book) %>
-<%= link_to 'Delete', @book, method: :delete %>
+<h2><%= @book.title %></h2>
+<h6>Author: <% @book.authors.each do |author| %>
+  <span><%= author.email %></span>
+<% end %></h4>
+<ul>
+  <li>
+    <%= link_to fans_book_path(@book) do %>
+    fans: <%= @book.fans.size %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to subscribers_book_path(@book) do %>
+    readers: <%= @book.subscribers.size %>
+    <% end %>
+  </li>
+  <li><%= link_to 'Edit', edit_book_path(@book) %></li>
+  <li><%= link_to 'Delete', @book, method: :delete %></li>
+</ul>
+

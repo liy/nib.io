@@ -41,10 +41,23 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
-    user = book.authors[0]
-    book.authoring.destroy
-    book.destroy
-    redirect_to user
+    # @book = Book.find(params[:id])
+    # redirect_to @book, notice: 'The book can not be destroyed! wahahahah!'
+
+    a = "This is a simple test"
+    b = "This is a very simple est"
+
+    diffs = Diff::LCS.diff(a, b)
+    render json: diffs
+  end
+
+  def fans
+    @book = Book.find(params[:id])
+    # render json: @book.fans
+  end
+
+  def subscribers
+    @book = Book.find(params[:id])
+    # render json: @book.subscribers
   end
 end

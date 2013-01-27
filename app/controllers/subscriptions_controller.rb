@@ -7,6 +7,7 @@ class SubscriptionsController < ApplicationController
     
   end
 
+  # add a book subscription.
   def create
     @book = Book.find(params[:book_id])
     current_user.subscribe!(@book)

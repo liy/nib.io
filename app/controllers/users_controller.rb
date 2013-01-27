@@ -12,11 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # TODO: refine user information!
   def show
     @user = User.find(params[:id])
-    # TODO: get all the books
-    @books = @user.readings
-
+    @books = Book.all
     if current_user.id == @user.id
       render :home
     else
@@ -24,34 +23,21 @@ class UsersController < ApplicationController
     end
   end
 
+  # display all the writings of given user
   def writings
-    @user = User.find_by_id(params[:user_id])
-    if @user
-      @books = @user.writings
-    else
-      @books = current_user.writings
-    end
+    @user = User.find(params[:id])
+    @books = @user.writings
   end
 
+  # display all the readings of given user
   def readings
-    @user = User.find_by_id(params[:user_id])
-    if @user
-      @books = @user.readings
-    else
-      @books = current_user.readings
-    end
+    @user = User.find(params[:id])
+    @books = @user.readings
   end
 
+  # display all the favourite books of given user
   def likes
-    @user = User.find_by_id(params[:user_id])
-    if @user
-      @books = @user.likes
-    else
-      @books = current_user.likes
-    end
-  end
-
-  def subscribe
-
+    @user = User.find(params[:id])
+    @books = @user.likes
   end
 end

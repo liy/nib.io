@@ -1,22 +1,4 @@
 NibIo::Application.routes.draw do
-  get "authorings/new"
-
-  get "authorings/create"
-
-  get "authorings/edit"
-
-  get "authorings/update"
-
-  get "authorings/destroy"
-
-  get "subscriptions/index"
-
-  get "subscriptions/show"
-
-  get "subscriptions/create"
-
-  get "subscriptions/destroy"
-
   root :to => "home#index"
 
   # :as => 'signin' ensures we have functions: path_to_signin, url_to_signin available
@@ -25,14 +7,19 @@ NibIo::Application.routes.draw do
   get '/signup', :to => 'users#new'
 
   resources :sessions
-  resources :books
+
+  resources :books do
+    member do
+      get :subscribers
+      get :fans
+    end
+  end
 
 
   # by default it will be curent user
   # get '/readings' => 'users#readings'
   # get '/writings' => 'users#writings'
   # get '/likes' => 'users#likes'
-
 
   # user resources, readings and writings
   resources :users do
