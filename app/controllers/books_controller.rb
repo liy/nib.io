@@ -15,6 +15,8 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  # Start writing a brand new book.
+  # If you want to join to a existing book authoring, authorings_controller#create should be used.
   def create
     begin
       @book = current_user.writings.create!(params[:book])

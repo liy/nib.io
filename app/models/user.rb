@@ -30,15 +30,19 @@ class User < ActiveRecord::Base
     favourites.find_by_book_id!(book.id).destroy
   end
 
-  def subscribe!(book)
-    subscriptions.create!(book_id: book_id)
+  def subscribed?(book)
+    subscriptions.find_by_book_id(book.id)
   end
 
-  def subscribed?(book)
-
+  def subscribe!(book)
+    subscriptions.create!(book_id: book.id)
+  end
+  
+  def unsubscribe!(book)
+    subscriptions.find_by_book_id!(book.id).destroy
   end
 
   def is_author?(book)
-
+    authorings.find_by_book_id(book.id)
   end
 end

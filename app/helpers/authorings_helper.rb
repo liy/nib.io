@@ -1,0 +1,2 @@
+module AuthoringsHelper
+end

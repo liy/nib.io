@@ -1,0 +1,11 @@
+<% if current_user.subscribed?(book) %>
+<!-- unsubscribe the book link -->
+<%= link_to current_user.subscriptions.find_by_book_id(book.id), id: "subscription-#{book.id}", method: :delete, remote: true do %>
+  <span class="entypo-book red" style="font-size: 13px; margin-top:10px">unsubscribe</span>
+<% end %>
+<% else %>
+<!-- subscribe the book -->
+<%= link_to subscriptions_path(book_id: book.id), id: "subscription-#{book.id}", method: :post, remote: true do %>
+  <span class="entypo-book" style="font-size: 13px; margin-top:10px">subscribed</span>
+<% end %>
+<% end %>
