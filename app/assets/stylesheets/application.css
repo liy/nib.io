@@ -32,7 +32,7 @@ a {
   text-decoration: none;
 }
 
-.container {
+.root {
   width: 1024px;
   margin: auto;
 }

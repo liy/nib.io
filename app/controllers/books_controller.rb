@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
-  layout 'reading', only: [:show]
-  layout 'writing', only: [:new, :edit]
+  layout :books_layout
 
-  # browse all books
   def index
     @books = Book.all
   end
@@ -60,4 +58,17 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     # render json: @book.subscribers
   end
+
+
+  private
+    # choose the correct book layout
+    def books_layout
+      if params[:action] == 'show'
+        "reading"
+      elsif params[:action] == 'edit' || params[:action] == 'new'
+        "writing"
+      else
+        "application"
+      end
+    end
 end
