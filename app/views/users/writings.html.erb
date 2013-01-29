@@ -1,3 +1,6 @@
 <h1>writings</h1>
-<%= render :partial => "user_menu" %>
-<%= render :partial => "books", :locals => { :type => :writings } %>
+<%= render "user_menu" %>
+<div class="paper user-info-container">
+  <%= render "sidebar" %>
+  <%= render "books" %>
+</div>

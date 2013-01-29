@@ -1,3 +1,6 @@
-<h1>favourites</h1>
-<%= render :partial => "user_menu" %>
-<%= render :partial => "books", :locals => { :type => :likes } %>
+<h1>likes</h1>
+<%= render "user_menu" %>
+<div class="paper user-info-container">
+  <%= render "sidebar" %>
+  <%= render "books" %>
+</div>

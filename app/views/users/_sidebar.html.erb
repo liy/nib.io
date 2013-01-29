@@ -1,0 +1,21 @@
+<div class="user-sidebar">
+  <div class="speech-bubble"><input></input></div>
+  <div class="user-sidebar-menu">
+    <!-- Only display new book button when the action is 'writings' -->
+    <%  if params[:action] == 'writings' %>
+    <ul>
+      <li><%= link_to '写本新书', new_book_path %></li>
+    </ul>
+    <% end %>
+    <ul>
+      <li><%= link_to "推理", "#" %></li>
+      <li><%= link_to "小说", "#" %></li>
+      <li><%= link_to "诗歌", "#" %></li>
+      <li><%= link_to "科幻", "#" %></li>
+      <li><%= link_to "游记", "#" %></li>
+      <li><%= link_to "美食", "#" %></li>
+      <li><%= link_to "传记", "#" %></li>
+      <li><%= link_to "长篇小说", "#" %></li>
+    </ul>
+  </div>
+</div>

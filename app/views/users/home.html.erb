@@ -1,4 +1,6 @@
-<!-- signed in user's home -->
 <h1>home</h1>
-<%= render :partial => "user_menu" %>
-<%= render :partial => "books", :locals => { :type => :home } %>
+<%= render "user_menu" %>
+<div class="paper user-info-container">
+  <%= render "sidebar" %>
+  <%= render "books" %>
+</div>
