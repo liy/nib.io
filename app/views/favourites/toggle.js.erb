@@ -1,1 +1,1 @@
-$('#like-<%= @book.id %>').replaceWith('<%= j render("heart", book: @book)%>')
+$('#like-<%= @book.id %>').replaceWith('<%= j render("/users/heart", book: @book)%>')

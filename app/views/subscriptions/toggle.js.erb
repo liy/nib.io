@@ -1,1 +1,1 @@
-$('#subscription-<%= @book.id %>').replaceWith('<%= j render("read", book: @book)%>')
+$('#subscription-<%= @book.id %>').replaceWith('<%= j render("/users/read", book: @book)%>')
