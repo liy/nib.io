@@ -5,6 +5,8 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  # This action will show the summery information of the book, such as the summery of the book, authors and pictures. For brief overview only.
+  # To obtain the index of the book, use SectionsController#index. Since the sections is nested into the Book resource.
   def show
     @book = Book.find(params[:id])
   end

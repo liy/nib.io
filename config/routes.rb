@@ -13,6 +13,7 @@ NibIo::Application.routes.draw do
       get :subscribers
       get :fans
     end
+    resources :sections
   end
 
 
