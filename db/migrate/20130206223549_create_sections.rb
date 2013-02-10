@@ -3,10 +3,12 @@ class CreateSections < ActiveRecord::Migration
     create_table :sections do |t|
       t.string :title
       t.text :content
+      t.string :slug
       t.belongs_to :book
 
       t.timestamps
     end
     add_index :sections, :book_id
+    add_index :sections, :slug
   end
 end

@@ -1,0 +1,9 @@
+<h1>
+  <%= form_for [@book, @section] do |f| %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %><br />
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+    <div><%= f.submit %></div>
+  <% end %>
+</h1>

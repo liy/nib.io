@@ -44,12 +44,14 @@ ActiveRecord::Schema.define(:version => 20130206223549) do
   create_table "sections", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "slug"
     t.integer  "book_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "sections", ["book_id"], :name => "index_sections_on_book_id"
+  add_index "sections", ["slug"], :name => "index_sections_on_slug"
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"

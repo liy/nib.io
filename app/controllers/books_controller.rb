@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     begin
       @book = current_user.writings.create!(params[:book])
     rescue Exception => e
-      render 'new', flash: { error: @book.errors.full_messages }
+      render 'new', error: @book.errors.full_messages
     end
 
     redirect_to @book
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     if @book.update_attributes(params[:book])
-      redirect_to @book, notice: 'The book was sucessfully updated.'
+      redirect_to @book, notice: 'The book was successfully updated.'
     else
       render 'edit', notice: @book.errors.full_messages
     end
@@ -42,13 +42,12 @@ class BooksController < ApplicationController
 
   def destroy
     # @book = Book.find(params[:id])
-    # redirect_to @book, notice: 'The book can not be destroyed! wahahahah!'
+    # redirect_to @book, notice: 'The book can not be destroyed!'
 
-    a = "This is a simple test"
-    b = "This is a very simple est"
+    a = 'This is a simple test'
+    b = 'This is a very simple est'
 
-    diffs = Diff::LCS.diff(a, b)
-    render json: diffs
+    render json: Diff::LCS.diff(a, b)
   end
 
   def fans
@@ -66,11 +65,11 @@ class BooksController < ApplicationController
     # choose the correct book layout
     def books_layout
       if params[:action] == 'show'
-        "reading"
+        'reading'
       elsif params[:action] == 'edit' || params[:action] == 'new'
-        "writing"
+        'writing'
       else
-        "application"
+        'application'
       end
     end
 end

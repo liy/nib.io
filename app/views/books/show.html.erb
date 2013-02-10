@@ -4,7 +4,7 @@
 <h2><%= @book.title %></h2>
 <h6>Author: <% @book.authors.each do |author| %>
   <span><%= author.email %></span>
-<% end %></h4>
+<% end %></h6>
 <ul>
   <li>
     <%= link_to fans_book_path(@book) do %>
@@ -20,3 +20,13 @@
   <li><%= link_to 'Delete', @book, method: :delete %></li>
 </ul>
 
+<h2>Sections</h2>
+<ul>
+  <% @book.sections.each do |s| %>
+    <li>
+    <h6><%= s.title %><%= link_to 'Edit', edit_book_section_path(@book, s) %></h6>
+    </li>
+  <% end %>
+</ul>
+
+<li></li>
