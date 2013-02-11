@@ -56,3 +56,6 @@ gem 'diff-lcs'
 
 # git support
 gem 'grit'
+
+# friendly id
+gem 'friendly_id'

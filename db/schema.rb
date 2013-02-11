@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206223549) do
+ActiveRecord::Schema.define(:version => 20130211221057) do
 
   create_table "authorings", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(:version => 20130206223549) do
   add_index "favourites", ["book_id"], :name => "index_favourites_on_book_id"
   add_index "favourites", ["user_id", "book_id"], :name => "index_favourites_on_user_id_and_book_id", :unique => true
   add_index "favourites", ["user_id"], :name => "index_favourites_on_user_id"
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "sections", :force => true do |t|
     t.string   "title"

@@ -8,6 +8,10 @@ class SectionsController < ApplicationController
 
 # show a specific section of a book
   def show
+    # if the url is linked to the old url, do a permanet redirect.
+    if request.path != book_section_path(@book, @section)
+      redirect_to [@book, @section], status: :moved_permanently
+    end
   end
 
   def new
@@ -42,6 +46,6 @@ class SectionsController < ApplicationController
 private
   def find_section
     @book = Book.find(params[:book_id])
-    @section = Section.find_by_slug!(params[:id])
+    @section = Section.find(params[:id])
   end
 end
