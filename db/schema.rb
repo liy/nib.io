@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130206223549) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
+    t.text     "summary"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130206223549) do
     t.string   "title"
     t.text     "content"
     t.string   "slug"
+    t.integer  "position"
     t.integer  "book_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_filter :find_section
+  before_filter :find_section, only: [:show, :edit, :update, :destroy]
 
   # show index of the book
   def index
@@ -25,8 +25,7 @@ class SectionsController < ApplicationController
   end
 
   def update
-    @book = Section.find(params[:book_id])
-    if @book.update_attributes!(params[:section])
+    if @section.update_attributes!(params[:section])
       redirect_to book_path @book
     else
       render 'edit'
@@ -35,6 +34,7 @@ class SectionsController < ApplicationController
 
   # handled with care!
   def destroy
+    @section.destroy
   end
 
 private

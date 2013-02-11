@@ -4,8 +4,8 @@
       <%# image_tag "cover.gif", {:class => "book-cover"} %>
       <span class="book-title"><%= book.title %></span>
     </div>
-    <div class="book-middle"><p class="book-summery">book.title</p></div>
-  </a>
+    <div class="book-middle"><p class="book-summery"><%= book.summary %></p></div>
+</a>
   <div class="book-bottom">
     <%= render 'book_tool', book: book %>
     <ul class="book-author-category">

@@ -17,6 +17,7 @@
     <% end %>
   </li>
   <li><%= link_to 'Edit', edit_book_path(@book) %></li>
+  <li><%= link_to 'New Chapter', new_book_section_path(@book) %></li>
   <li><%= link_to 'Delete', @book, method: :delete %></li>
 </ul>
 
@@ -24,9 +25,7 @@
 <ul>
   <% @book.sections.each do |s| %>
     <li>
-    <h6><%= s.title %><%= link_to 'Edit', edit_book_section_path(@book, s) %></h6>
+    <h6><%= s.title %><%= link_to 'Edit', edit_book_section_path(@book, s) %><%= link_to 'Delete', book_section_path(@book, s), method: :delete %></h6>
     </li>
   <% end %>
 </ul>
-
-<li></li>

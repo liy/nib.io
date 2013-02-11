@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :title, :summary
 
   has_many :subscriptions, :dependent => :destroy
   has_many :subscribers, :through => :subscriptions, :source => :user, :class_name => 'User'

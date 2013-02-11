@@ -12,6 +12,6 @@ class Section < ActiveRecord::Base
 
 private
   def generate_slug
-    self.slug ||= title.parameterize
+    self.slug = id.to_s + '-' + title.parameterize
   end
 end

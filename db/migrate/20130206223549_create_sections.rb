@@ -4,6 +4,7 @@ class CreateSections < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.string :slug
+      t.integer :position
       t.belongs_to :book
 
       t.timestamps
