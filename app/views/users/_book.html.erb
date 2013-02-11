@@ -9,7 +9,7 @@
   <div class="book-bottom">
     <%= render 'book_tool', book: book %>
     <ul class="book-author-category">
-      <li><a href="#">李旸</a></li>
+      <li><a href="#"><%= link_to book.authors[0].name, user_path(book.authors[0]) %></a></li>
       <li><a href="#">小说</a></li>
     </ul>
   </div>

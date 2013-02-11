@@ -18,6 +18,8 @@ class SectionsController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     @section = @book.sections.create(params[:section])
+
+    redirect_to @book
   end
 
   def edit
