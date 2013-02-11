@@ -46,6 +46,6 @@ class SectionsController < ApplicationController
 private
   def find_section
     @book = Book.find(params[:book_id])
-    @section = Section.find(params[:id])
+    @section = @book.sections.find(params[:id])
   end
 end

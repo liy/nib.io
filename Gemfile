@@ -58,4 +58,4 @@ gem 'diff-lcs'
 gem 'grit'
 
 # friendly id
-gem 'friendly_id'
+gem 'friendly_id', git: 'git://github.com/norman/friendly_id.git'

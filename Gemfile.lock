@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: cb0c987be9cc36fea581ba56b321f8790f0b1c50
+  specs:
+    friendly_id (4.1.0.beta.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,7 +53,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    friendly_id (4.0.9)
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -129,7 +134,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   diff-lcs
-  friendly_id
+  friendly_id!
   grit
   jquery-rails
   meta_request
